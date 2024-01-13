@@ -7,10 +7,10 @@ import App from "./Components/App";
 render(
     <React.StrictMode>
         <AntdApp message={{ maxCount: 1 }} notification={{ placement: 'bottomLeft' }}>
-            <AppExport />
+            <App />
         </AntdApp>
     </React.StrictMode>,
-    document.getElementById('lara-excel-craft-export')
+    document.getElementById('lara-report-craft-form')
 );
 
 

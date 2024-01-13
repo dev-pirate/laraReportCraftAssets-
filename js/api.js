@@ -11,8 +11,22 @@ export const loadReportsList = async (onSuccess) => {
             console.log(`reports names loading failed.`);
         }
 
-        // Handle the response data as needed
-        console.log('Response Data:', response.data);
+    } catch (error) {
+        // Handle errors
+        console.error('Error:', error);
+    }
+};
+
+export const generateReport = async (title, onSuccess) => {
+    try {
+        const response = await axios.post(laraReportCraftReportsGenerateRoute, { title });
+
+        console.log({ response });
+        if (response.data.success) {
+            onSuccess(response);
+        } else {
+            console.log(`reports generation loading failed.`);
+        }
 
     } catch (error) {
         // Handle errors
